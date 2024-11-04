@@ -1,0 +1,110 @@
+.bk3{
+    position: absolute;
+    z-index: -99999;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: rgb(225, 0, 255);
+    filter: blur(110px);
+    animation: bk3 19s infinite;
+}
+
+.bk2{
+    position: absolute;
+    z-index: -99999;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #00eeff;
+    filter: blur(110px);
+    animation: bk2 20s infinite;
+}
+
+.bk1{
+    position: absolute;
+    z-index: -9999;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #e5ff00;
+    filter: blur(110px);
+    animation: bk1 35s infinite;
+}
+
+@keyframes bk1 {
+    0%   {
+        top: 500px;
+        left: 1200px;
+    }
+    25%  {
+        top: 400px;
+        left: 100px;
+    }
+    75%  {
+        top: 400px;
+        left: 300px;
+    }
+    85% {
+        top: 230px;
+        left: 900px;
+    }
+    100% {
+        top: 500px;
+        left: 1200px;
+    }
+  }
+
+
+@keyframes bk3 {
+    0%   {
+        top: 100px;
+        left: 500px;
+    }
+    25%  {
+        top: 400px;
+        left: 900px;
+    }
+    75%  {
+        top: 150px;
+        left: 300px;
+    }
+    85% {
+        top: 400px;
+        left: 900px;
+    }
+    100% {
+        top: 100px;
+        left: 500px;
+    }
+  }
+
+
+
+  @keyframes bk2 {
+    0%   {
+        top: 500px;
+        left: 300px;
+    }
+    25%  {
+        top: 400px;
+        left: 500px;
+    }
+    75%  {
+        top: 400px;
+        left: 700px;
+    }
+    85% {
+        top: 330px;
+        left: 300px;
+    }
+    100% {
+        top: 500px;
+        left: 300px;
+    }
+  }

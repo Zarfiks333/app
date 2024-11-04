@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <link rel="stylesheet" href="{% static "css/fanari.css" %}">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>{% block title %} MoreDeT {% endblock %}</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="bk"></div>
+        <div class="bk1"></div>
+        <div class="bk2"></div>
+        <div class="bk3"></div>
+
+        <div class="header">
+
+            <div class="logo">
+                <a href="{% url 'index'%}">
+                    <span>MoreDeT</span>
+                </a>
+            </div>
+
+            <div class="menu">
+
+                {% if user.is_authenticated%}
+                    <a href="{% url 'profile' %}">Profile</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div class="top-content">
+            <div class="top-block-content">
+                <div class="left-content"> 
+                    <span>MoreDeT это лучший проект<br> Зарабатывай вместе с нами ✨<br>Приглашай Друзей 🥳<br> Делись в своих соц.сетях <br> И не забывай мы здесь 🤗<br>
+
+                    <div class="top-menu">
+                        <span><a href="#">Discord</a></span>
+                        <span><a href="https://vk.com/moredevit" target="_blank">Vk</a></span>
+                    </div>
+
+                    </span>
+                </div>
+                <div class="right-content">
+                    <div class="img-right-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-content">
+            <div class="center-block-content">
+
+                <div class="center-left-content">
+                    <span>Dirco это бот дискорд 😎<br> Который единственный в своём роде <br> Все легко и просто<br>Приглашай Общайся и Зарабатывай 🔥<br>Бонусом являеться бесплатные функционал бота 🎁</span>
+                </div>
+
+                <div class="center-menu">
+                    <a href="#">Invite</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

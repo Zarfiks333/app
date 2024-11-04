@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: linear-gradient(to left,#ff39ff, #70ff5e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.left-block{
+    width: 30%;
+    height: 100%;
+    align-content: center;
+    justify-content: center;
+}
+
+.rigth-block{
+    width: 70%;
+    height: 100%;
+}
+
+form{
+    padding-left: 5%;
+    float: right;
+    width: 60%;
+    height: 55%;
+    background-color: #ffffff17;
+    border-radius: 10px;
+    border: 1px solid #ffffff3d;
+    align-content: center;
+}
+
+form label{
+    padding-bottom: 5px;
+    padding-top: 15px;
+    width: 100%;
+    display: block;
+    font-weight: 200;
+    font-size: 20px;
+    font-family: fantasy;
+    color: rgb(56, 56, 56);
+}
+
+form input{
+    padding: 3px;
+    border-radius: 5px;
+    border: dashed rgb(56, 56, 56);
+    background-color: rgba(0, 0, 0, 0.007);
+}
+
+form input:focus{
+    background-color: rgba(0, 0, 0, 0.137);
+}
+
+button{
+    cursor: pointer;
+    margin-top: 15px;
+    padding: 7px;
+    background-color: rgb(68, 68, 68);
+    border-radius: 5px;
+    border: solid rgb(56, 56, 56) 1px;
+    color: antiquewhite;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgba(68, 68, 68, 0.89);
+    color: rgb(226, 226, 226);
+    border: solid rgba(56, 56, 56, 0.596) 0.5px;
+}
+
+form .errorlist li{
+    color: rgba(0, 0, 0, 0.719);
+    list-style-type: none;
+    width: 280px;
+    position: absolute;
+    background-color: rgba(255, 53, 53, 0.212);
+    border-radius: 10px;
+    border: solid rgb(255, 53, 53) 1px;
+    padding: 10px;
+    box-shadow: inset 0px 0px 5px 0px rgba(255, 53, 53);
+    box-shadow: 0px 0px 5px 0px rgba(255, 53, 53);
+    top: -570px;
+    animation: ani 0.5s forwards;
+}
+
+.fr {
+    margin-top: 10px;
+}
+
+.fr a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+@keyframes ani {
+    0% {transform: translateX(1900px);}
+    50% {transform: translateX(1300px);}
+    100% {transform: translateX(1350px);}
+}
+
+.helptext{
+    display: none;
+}

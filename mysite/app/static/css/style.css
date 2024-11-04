@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+html{
+    overflow: hidden;
+}
+
+body{
+    background: rgb(121,255,120);
+    background: linear-gradient(172deg, rgba(121,255,120,1) 0%, rgba(255,172,254,1) 100%);
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+
+.header{
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 80px;
+}
+
+.logo{
+    width: 25%;
+    margin-left: 140px;
+}
+
+.logo a{
+    color: rgb(157, 121, 214);
+    text-decoration: none;
+    font-size: 30px;
+    font-family: "Archivo Black", sans-serif;    transition: 0.35s;
+}
+
+.logo a:hover{
+    color: rgb(131, 78, 216);
+}
+
+.logo a:active{
+    position: relative;
+    top: 2px;
+}
+
+.menu{
+    width: 50%;
+    height: 100%;
+    align-content: center;
+}
+
+.menu a{
+    float: right;
+    padding: 10px;
+    font-size: 20px;
+    color: yellow;
+    background-color: rgb(98, 0, 255);
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: "Dela Gothic One", sans-serif;
+}
+
+.menu a:hover{
+    color:rgba(236, 220, 73, 0.99);
+    border-radius: 10px;
+    background-color: rgba(136, 73, 236, 0.99);
+}
+
+.menu a:active{
+    position: relative;
+    top: 2px;
+}
+
+.top-content{
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+}
+
+.top-block-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.left-content{
+    align-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.left-content span{
+    line-height: 30px;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: "Exo 2", sans-serif;
+    text-align: center;
+    float: right;
+}
+
+.top-menu{
+    margin-top: 5px;
+}
+
+.top-menu a{
+    color: rgb(155, 115, 219);
+    font-weight: 800;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.top-menu a:hover{
+    color: rgb(143, 97, 218);
+}
+
+.right-content{
+    align-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.img-right-content{
+    margin-left: 20px;
+    filter: drop-shadow(0 0 20px #29aaff);
+    width: 300px;
+    height: 300px;
+    background-size: 100%;
+    background-image: url(../img/robot.png);
+}
+
+.center-content{
+    height: 400px;
+    width: 100%;
+}
+
+.center-block-content{
+    align-content: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.center-left-content{
+    align-content: center;
+    height: 100%;
+    width: 40%;
+}
+
+.center-left-content span{
+    line-height: 30px;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: "Exo 2", sans-serif;
+    text-align: center;
+    float: right;
+}
+
+.center-menu{
+    width: 60%;
+    height: 70%;
+    align-content: end;
+}
+
+.center-menu a{
+    margin-left: 30px;
+    background-color: blueviolet;
+    color: rgb(252, 255, 93);
+    font-size: 30px;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 15px;
+    font-family: "Archivo Black", sans-serif;    transition: 0.35s;
+
+}
+
+.center-menu a:hover{
+    background-color: rgba(137, 43, 226, 0.808);
+    color: rgba(252, 255, 93, 0.795);
+}
+
+.center-menu a:active{
+    position: relative;
+    top: 2px;
+}
+
+
+
+
