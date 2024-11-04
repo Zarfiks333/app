@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+BuldMMO | {{user.username}} | Профиль
+{% endblock title %}
+
+{% block header %} 
+<div class="header">
+    <div class="header_logo">
+        <a href="/">BuldMMO</a>
+    </div>
+    <div class="header_menu"></div>
+    <div class="header_search"></div>
+    <div class="header_profile">
+        <ul class="menu_profile">
+        </ul>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+    <div class="content_profile">
+    <div class="left_content_profile"></div>
+    <div class="center_content_profile">
+        <div class="profile_block">
+            <div class="left_block_profile">
+                <div class="top_left_block_profile">
+                    <div class="avatar_profile">
+                        {% if user.image %}
+                            <img src="{{ user.image.url }}" alt="avatar">
+                        {% else %}
+                            <img src="{% static "img\iconavatar.png" %}" alt="avatar">
+                        {% endif %}
+                    </div>
+                    <div class="name_profile">
+                        <p>{{user.username}}</p>
+                        <div class="icon_copy_menu"></div>
+                    </div>
+                </div>
+                <div class="bottom_left_block_profile">
+                    <div class="bottom_left_menu_profile">
+                        <div class="top_bottom_left_menu_profile">
+
+                            <div class="menu_profile">
+                                <div class="tab">
+                                    <a href="#tab_1" class="tab_a">Профиль</a>
+                                    <img src="{% static "img\home.png" %}" alt="">
+                                </div>
+                                <div class="tab">
+                                    <a href="#tab_2" class="tab_a">Безопасность </a>
+                                    <img src="{% static "img\settings.png" %}" alt="">
+                                </div>
+                            </div>
+                
+                        </div>
+
+                        <div class="bottom_bottom_left_menu_profile">
+
+                            <li><a href="/"><- Назад </a></li>
+                            <p>|</p>
+                            <li><a href="{% url "user:logout" %}">> Выйти <</a></li>
+                            {% if user.is_superuser %}
+                            <p>|</p>
+                            <li><a href="{% url "admin:index" %}">admin</a></li>
+                            {% endif %}
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rigth_block_profile">
+                <div class="top_rigth_block_profile">
+                    <div class="img"></div>
+                </div>
+                <div class="bottom_rigth_block_profile">
+
+                    <div id="tab_2" class="tab_display">
+                        <div class="left_bottom_rigth_block_prfile">
+                            <p style="color: wheat; font-family: monospace; font-size: 100px;"> Пока что нечего тута, нету.</p>
+                        </div>
+                    </div>
+
+                    <div id="tab_1" class="tab_display">
+                        <div class="left_bottom_rigth_block_prfile">
+                            <form action="{% url "user:profile" %}" method="post" enctype="multipart/form-data" >
+                                {% csrf_token %}
+                                <div>
+                                    <p class="mt-p">
+                                        <label for="{{ form.image.id_for_label }}" class="avatar_form_label"> <img src="{% static "img\open.png" %}" alt=""> Сменить аватарку </label>
+                                        {{ form.image}}
+                                    </p>
+                                    <p class="mt-p">
+                                        <label class="gh-1">Смена ника </label>
+                                        <p class="mt-p-2">
+                                            <label for="{{ form.username.id_for_label }}" class="nikname_form_label"><img src="{% static "img\pen.png" %}" alt=""> Смена ника </label>
+                                            {{ form.username }}
+                                        </p>
+                                    </p>
+
+                                    <p class="login_btn">
+                                        <button type='submit' formmethod="post">Сохранить</button>
+                                    </p> 
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="footer_rigth_block_profile">
+                    <p>BuldMMO  приветствует тебя {{user.username}}. Был создан ради первого проекта Zarfiks ом.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rigth_content_profile"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+{% endblock content %}

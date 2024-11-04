@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% load apps_tags %}
+
+{% block title %} BuldMMO | {{ category.name }} {% endblock%}
+
+{% block content %}
+<div class="content">
+    <div class="left_content_block">
+    </div>
+
+    <div class="center_content_block">
+        <div class="display_block-s">
+        </div>
+        {% for buldes in buldy %}
+        <div class="content_block">
+            <a href="{{buldes.slug}}" name="title">{{buldes.name}}
+                <div class="img_content_block">
+                    {% if buldes.image %}
+                    <img src="{{buldes.image.url}}"/>
+                    {% endif %}
+                </div>
+            </a>
+            <p class="description_content_block"> {{buldes.description}}</p>
+        </div>
+        {% endfor %}                    
+
+    </div>
+
+    <div class="right_content_block">
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block header %}
+
+<div class="header">
+    <div class="header_logo">
+        <a href="/">BuldMMO</a>
+    </div>
+</div>
+    
+{% endblock header %}
+
+{% block content %}
+
+<div class="content">
+    <div class="left_content_profile"></div>
+    <div class="center_content_profile">
+        <div class="login_block">
+            
+            <form action="{% url 'user:login' %}" method="post">
+
+                <div id="logins_btn" class="forum-login">
+                    <h1>Войти</h1>
+                    {% csrf_token %}
+
+                    <p>
+                        <label for="username" class="form_label" data-icon="u" > Ваш никнайм </label>
+                        <input id="username" name="username" class="form_input" value="{% if form.username.value %}{{form.username.value}}{% endif %}" required="required" type="text" placeholder=""/>
+                    </p>
+                    <p>
+                        <label for="password" class="form_label" data-icon="p"> Ваш пароль </label>
+                        <input id="password" name="password" class="form_input" required="required" type="password" placeholder="" />
+                    </p>
+
+                    <p class="login_btn">
+                        <button type='submit'>Войти</button>
+                        <div class="fr2">
+                            <a href="/">Назад</a>
+                            <p>|</p>
+                            <a href="{% url "user:registration" %}">Нет аккаунта?</a>
+                        </div>
+                    </p> 
+
+                </div>
+    
+            </form>
+        </div>
+    </div>
+    <div class="rigth_content_profile"></div>
+</div>
+{% endblock content %}

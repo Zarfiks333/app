@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} BuldMMO | {{ category.name }} | {{buldys.name}} {% endblock%}
+
+{% block header %}
+<div class="header">
+    <div class="header_logo">
+        <a href="/">BuldMMO</a>
+    </div>
+    
+    <div class="header_menu">
+    </div> 
+
+    <div class="header_search">
+    </div>  
+    {% if request.user.is_authenticated %}
+            <div class="header_profile">
+                <ul class="menu_profile">
+                    <li>
+                        <button>
+                            <div class="icon_profile">
+                                {% if user.avatar.url %}
+                                    <img src="{{ user.avatar.url }}" alt="avatar">
+                                {% else %}
+                                    <img src="{% static "img\iconavatar.png" %}" alt="avatar">
+                                {% endif %}
+                            </div>
+                        </button>
+                        <ul class="submenu_profile">
+                        
+                            <li><a href="{% url "user:profile" %}">profile</a></li>
+                            <li><a href="{% url "user:logout" %}">logout</a></li>
+                            {% if user.is_superuser %}
+                            <li><a href="{% url "admin:index" %}">admin</a></li>
+                            {% endif %}
+        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            {% else %}
+                <div class="header_login">
+                    <a href="#">Login</a>
+                    <p> | </p>
+                    <a href="#">Register</a>
+                </div>  
+            {% endif %}
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="content">
+    <div class="left_content_block">
+    </div>
+
+    <div class="center_content_block">
+        <div class="display_block-s">
+        </div>
+        <div class="content_block">
+            <p> {{buldys.name}}</p>
+            {% if  buldys.image %}
+            <div class="img_content_block">
+                <img src="{{ buldys.image.url }}"/>
+            </div>
+            {% endif %}
+            <p class="description_content_block-2"> {{ buldys.description}}</p>
+        </div>                 
+
+    </div>
+
+    <div class="right_content_block">
+    </div>
+</div>
+{% endblock content %}

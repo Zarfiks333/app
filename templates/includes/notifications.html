@@ -1,0 +1,10 @@
+{% load static %}
+{% if form.non_field_errors %}
+   <div class="container_erores">
+       <div class="block_erores">
+           <div class="block_erores_content">
+            {{form.non_field_errors}}
+           </div>
+       </div>
+   </div>
+{% endif %}

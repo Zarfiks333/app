@@ -1,0 +1,111 @@
+{% load static %}
+{% load apps_tags %}
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> {% block title %} {{title}} {% endblock title %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/rem.css' %}">
+    </head>
+    <body>
+    
+        {% block header %}
+        <div class="header">
+            <div class="header_logo">
+                <a href="/">BuldMMO</a>
+            </div>
+            <div class="header_menu">
+
+                <div class="top_menu">
+                        <a href="{% url "main:newbuld" %}" class="link_top_menu">Новые билды</a>
+                        <a href="{% url "main:new" %}" class="link_top_menu">Новости</a>
+                        <a href="{% url "main:forum" %}">Форум</a>
+                        <a href="{% url "main:rmtgame" %}" class="link_top_menu">РМТ</a>
+                </div> 
+                {% block bottomenu %}
+                <div class="bottom_menu">
+                    
+                    <div class="left_menu">
+                        {% tag_categoris as category %}
+                        {% for categoris in category %}
+                            <a href="{% url "category:index" categoris.slug %}">{{categoris.name}}</a>
+                        {% endfor %}
+                    </div> 
+                     
+                    <div class="rigth_menu">
+                        
+                        <ul class="menu">
+                            <li>
+                                <button></button>
+                                <ul class="submenu">
+                
+                                    <li>
+                                        {% tag_categoris as category %}
+                                        {% for categoris in category %}
+                                            <a href="{% url "category:index" categoris.slug %}">{{categoris.name}}</a>
+                                        {% endfor %}
+                                    </li>
+                
+                                </ul>
+                            </li>
+                        </ul>
+                
+                    </div> 
+                
+                </div> 
+                {% endblock bottomenu %}
+
+            </div>  
+
+            <div class="header_search">
+            </div>  
+            
+            {% block ligon %}
+            {% if request.user.is_authenticated %}
+            <div class="header_profile">
+                <ul class="menu_profile">
+                    <li>
+                        <button>
+                            <div class="icon_profile">
+                                {% if user.image %}
+                                    <img src="{{ user.image.url }}">
+                                {% else %}
+                                    <img src="{% static "img\iconavatar.png" %}">
+                                {% endif %}
+                            </div>
+                        </button>
+                        <ul class="submenu_profile">
+                        
+                            <li><a href="{% url "user:profile" %}">profile</a></li>
+                            {% if user.is_superuser %}
+                            <li><a href="{% url "admin:index" %}">admin</a></li>
+                            {% endif %}
+                            <li><a href="{% url "user:logout" %}">logout</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            {% else %}
+                <div class="header_login">
+                    <a href="{% url "user:login" %}">Login</a>
+                    <p> | </p>
+                    <a href="{% url "user:registration" %}">Register</a>
+                </div>  
+            {% endif %}
+              
+            {% endblock ligon %}
+            
+        </div>
+        {% endblock header %}
+
+        {% block content %}
+
+        {% endblock content %}
+
+        {% include "includes/notifications.html" %}
+    </body>
+</html>
